@@ -2,4 +2,5 @@
 - [20210111 - Swift](./Learned/20210111.md)
 - [20210112 - Swift MVC](./Learned/20210112.md)
 - [20210113 - Swift 하나 이상의 View Controller를 서로 연결하는 방법](./Learned/20210113.md)
-- 20210114 - delegate
+- [20210114 - delegate](./Learned/20210114.md)
+- [20210115- 외부 API를 통해 데이터를 요청하고 해당 데이터를 표시하는 방법](./Learned/20210115.md)
