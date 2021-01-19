@@ -5,3 +5,4 @@
 - [20210114 - delegate (Swift)](./Learned/20210114.md)
 - [20210115- 외부 API를 통해 데이터를 요청하고 해당 데이터를 표시하는 방법 (Swift)](./Learned/20210115.md)
 - [20210116- UIPickerView](./Learned/20210116.md)
+- [20210119- ViewController Lifestyle](./Swift/ViewControllerLifestyle.md)
