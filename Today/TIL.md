@@ -11,4 +11,6 @@
 - [20210124- UIAlertController & UserDefaults 예제](./Learned/20210124.md)
 - [20210125](./Learned/20210125.md)
 - [20210126- Core Data & Querying 연습](./Learned/20210126.md)
-- [20210128 - UITableView & TableViewCell Customizing 연습](./Learned/20210128.md)
+- [20210128- UITableView & TableViewCell Customizing 연습](./Learned/20210128.md)
+- [20210129- didSet, willSet](./Learned/20210129.md)
+- [20210130- SideMenu](./Learned/20210130.md)
