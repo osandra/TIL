@@ -14,3 +14,6 @@
 - [20210128- UITableView & TableViewCell Customizing 연습](./Learned/20210128.md)
 - [20210129- didSet, willSet](./Learned/20210129.md)
 - [20210130- SideMenu](./Learned/20210130.md)
+- [20210131- CustomView를 만들어서 재사용하기](./Learned/20210131.md)
+- [20210201- property initializers run before 'self' is available error](./Learned/20210201.md)
+- [20210202- enum 코드](./Learned/20210202.md)
