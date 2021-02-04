@@ -18,3 +18,4 @@
 - [20210201- property initializers run before 'self' is available error](./Learned/20210201.md)
 - [20210202- enum 코드](./Learned/20210202.md)
 - [20210203- UITabBarController 연습](./Learned/20210203.md)
+- [20210204- 코드를 사용하여 UILabel 생성하는 방법(extension, closure 사용)](./Learned/20210204.md)
