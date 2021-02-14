@@ -19,3 +19,6 @@
 - [20210202- enum 코드](./Learned/20210202.md)
 - [20210203- UITabBarController 연습](./Learned/20210203.md)
 - [20210204- 코드를 사용하여 UILabel 생성하는 방법(extension, closure 사용)](./Learned/20210204.md)
+- [20210205- xib 파일 없이 tableViewCell 생성 및 Section을 사용하는 TableView 연습](./Learned/20210205.md)
+- [20210213- CollectionViewCell 안에 위치한 버튼 클릭 시 해당 셀 삭제하는 방법](./Learned/20210213.md)
+- [20210214- custom View에 있는 변수 값을 delegate를 통해 뷰 컨트롤러에 전달하는 방법](./Learned/20210214.md)
