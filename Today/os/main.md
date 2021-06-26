@@ -1,1 +1,1 @@
-- [프로세스](process.md)
+- [프로세스 & 스레드](process.md)
