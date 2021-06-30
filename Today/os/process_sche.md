@@ -53,4 +53,8 @@ SRT에서는 새로 들어온 프로세스의 예상 남은 시간(완료되기�
 - [https://www.studytonight.com/operating-system/multilevel-queue-scheduling](https://www.studytonight.com/operating-system/multilevel-queue-scheduling)
 
 - [https://www.studytonight.com/operating-system/multilevel-feedback-queue-scheduling](https://www.studytonight.com/operating-system/multilevel-feedback-queue-scheduling)
+
+- 도서 [쉽게 배우는 운영체제]
+
+- [운영체제 강의](https://www.inflearn.com/course/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-%EA%B3%B5%EB%A3%A1%EC%B1%85-%EC%A0%84%EA%B3%B5%EA%B0%95%EC%9D%98/)
 </details>
