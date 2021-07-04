@@ -53,4 +53,6 @@ DNS 서버는 한 번 조사한 이름을 `캐시에 기록`하기 때문에 검
 
 - [네트워크 강의](http://www.kocw.net/home/cview.do?mty=p&kemId=1046412)
 
+- 도서 [성공과 실패를 결정하는 1%의 네트워크 원리]
+
 </details>

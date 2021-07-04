@@ -183,10 +183,13 @@ public class TestRunnable implements Runnable {
 
 자바에서는 임계구역에 해당하는 코드 블록 선언 시 `synchronized 키워드`를 사용하여, 쓰레드가 모니터 락을 획득해야 해당 임계구역을 진입할 수 있게 구현했다. 메서드에 synchronized 키워드를 붙일 경우 해당 메서드 자체가 임계구역으로 설정된 것이고, 현재 해당 임계구역을 진입한 객체는 this 인스턴스가 된다. 혹은 모니터락을 가진 객체 인스턴스를 파라미터로 넘겨주는 방식으로 사용할 수 있다.
 
-따라서 공유 변수에 접근/조작 하는 임계구역을 메서드 혹은 블락으로 정의해서 이에 synchronized 키워드만 작성해주면 직접 wait, signal(notify)등을 호출하지 않아도 자바에서 구현해준다. 그러나 synchronized 키워드를 남발할 경우, 한 번에 하나의 프로세스만 실행이 가능하므로 성능 저하가 발생할 수 있다는 단점이 있다.
+동기화된 블럭 안에선 wait() 메서드를 통해 대기 상태로 진입하고, notify() 메서드를 통해 해당 객체 모니터에 대기 중인 쓰레드 하나를 깨운다. notifyAll() 메서드를 호출하면 해당 객체 모니터에 대기중인 모든 쓰레드를 깨운다.
+
+그러나 synchronized 키워드를 남발할 경우, 한 번에 하나의 프로세스만 실행이 가능하므로 성능 저하가 발생할 수 있다는 단점이 있다.
 
 모니터를 사용한 코드는 아래와 같다.
 ```java
+// 같은 공유 변수에 접근해서 값을 더하는 예
 // 방법1: 메서드에 키워드 사용
 public class TestRunnable implements Runnable {
     static class Counter { 
@@ -249,6 +252,141 @@ public class RaceCondition {
     }
 }
 ```
+---
+
+이번엔 음식을 조리한 다음에야 손님이 구입을 할 수 있는 코드를 작성했다. <br>조리하는 과정은 synchronized 키워드를 사용했기에 한 번에 한 쓰레드만 실행할 수 있다. 또한 한 번에 최대 5개까지 요리를 만들어 놓을 수 있다. 만약 만들어 놓은 음식이 5개라면 wait()을 통해 기다리고, 이는 추후 손님이 음식을 구입할 때 notify를 통해 호출된다.
+이와 반대로 손님은 음식이 없고, 음식점의 금일 재료는 남은 상태라면 기다리고 추후 요리사가 음식을 만든 후에 notify를 통해 호출된다.
+
+```java
+//ConcurrentTest.java
+package concurrent;
+import java.util.LinkedList;
+
+public class ConcurrentTest {
+    static LinkedList<String> food_list = new LinkedList<>(); // 준비된 음식 리스트를 연결리스트 형태로 구현
+    static int NUMBER_OF_THREADS = 50; //사용할 쓰레드 개수를 상수로 설정 ( 음식 먹는 쓰레드 50개, 음식 생성하는 쓰레드 50개로 설정함)
+
+    static int max = 5; // 5개까지만 미리 조리 가능
+    static int remaining = 150; // 오늘 판매항 음식 수량
+    static Cook cook = new Cook(food_list,max); //요리를 조리하고 판매하는 기능을 제공하는 Cook 클래스
+
+    static Thread[] eatThreads;
+    static Thread[] makeTreads;
+
+    public static void main(String[] args) throws InterruptedException {
+        eatThreads = new Thread[NUMBER_OF_THREADS];
+        makeTreads = new Thread[NUMBER_OF_THREADS];
+
+        for (int i =0;i<NUMBER_OF_THREADS;i++){ //쓰레드 생성 및 시작
+            eatThreads[i] = new Thread(new EatFood(cook));
+            makeTreads[i] = new Thread(new MakeFood(cook));
+            eatThreads[i].start();
+            makeTreads[i].start();
+        }
+
+        for (int i =0;i<NUMBER_OF_THREADS;i++){ //쓰레드가 끝날 때까지 기다림
+            eatThreads[i].join();
+            makeTreads[i].join();
+        }
+
+        System.out.println("금일 판매 종료");
+    }
+
+    public static class MakeFood implements Runnable { // 음식을 만드는 기능을 호출하는 쓰레드 MakeFood
+        Cook cook;
+
+        public MakeFood(Cook cook) {
+            this.cook = cook;
+        }
+
+        @Override
+        public void run() {
+            while (!Thread.currentThread().isInterrupted()) {
+                while (ConcurrentTest.remaining > 1) { //판매 가능 수량이 1 미만이면 음식 생성
+                    cook.makeFood();
+                }
+                // 모두 판매했으니 쓰레드 종료시키기
+                for (int i =0;i<NUMBER_OF_THREADS;i++){
+                    makeTreads[i].interrupt();
+                    makeTreads[i].interrupt();
+                }
+            }
+        }
+    }
+    public static class EatFood implements Runnable { // 음식을 먹는 기능을 호출하는 쓰레드 MakeFood
+        Cook cook;
+
+        public EatFood(Cook cook) {
+            this.cook = cook;
+        }
+
+        @Override
+        public void run() {
+            while (!Thread.currentThread().isInterrupted()) {
+                while (ConcurrentTest.remaining > 0) {
+                    cook.sellFood();
+                }
+                for (int i =0;i<NUMBER_OF_THREADS;i++){
+                    eatThreads[i].interrupt();
+                    makeTreads[i].interrupt();
+                }
+            }
+        }
+    }
+}
+```
+
+```java
+// Cook.java
+package concurrent;
+
+import java.util.LinkedList;
+
+public class Cook {
+    private LinkedList<String> food_list;
+    private int max;
+
+    public Cook(LinkedList<String> food_list, int max) {
+        this.food_list = food_list;
+        this.max = max;
+    }
+
+    synchronized void makeFood(){ //음식을 만드는 과정은 동시에 실행 X. 한 번에 하나의 음식만 만들 것임.
+        try {
+            while (food_list.size() == max){ // 만들어 놓을 수 있는 최대 수량을 이미 만들었으면 기다리기 -> 추후 sellFood 메서드에서 손님이 음식 하나 먹으면 신호를 받아 이후 코드 실행 가능
+                wait();
+            }
+            if (ConcurrentTest.remaining > 0) {
+                ConcurrentTest.remaining--;
+                food_list.addLast("김치볶음밥");
+                System.out.println("1인분 조리 완료 " + ConcurrentTest.remaining+" " + food_list); //식사 완료 문구와 재료 남은 수량, 현재 만들어놓은 음식들 출력
+                notify(); // 음식이 없어서 기다리는 손님이 있으면 알려주기
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    synchronized void sellFood(){ //음식을 파는 과정은 동시에 실행 X. 한 번에 하나의 음식만 팔 것임.
+        try {
+            while(food_list.isEmpty() && ConcurrentTest.remaining > 1){ //음식이 없고, 재료는 남은 상태라면 기다리기
+                wait();
+            }
+            if (food_list.size() > 0){
+                food_list.pop();
+                System.out.println("1인분 식사 완료 " + ConcurrentTest.remaining); //식사 완료 문구와 재료 남은 수량 출력
+                notify();
+            }
+
+        } catch(InterruptedException e){
+            e.printStackTrace();
+        }
+    }
+}
+```
+아래와 같이 조리가 된 후, 식사하는 쓰레드가 실행되는 것을 볼 수 있다.
+<p align="center">
+    <img src= "image/thread_result.png" width="500">
+</p>
 
 
 <details>
