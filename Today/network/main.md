@@ -1,1 +1,2 @@
-- [HTTP 메서드 및 헤더](1.md)
+- [HTTP 메서드 및 헤더](http.md)
+- [DNS](dns.md)
