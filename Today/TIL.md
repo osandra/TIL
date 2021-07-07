@@ -1,5 +1,5 @@
-### [Swift](./swift.md)
-### [Algorithm](./algo.md)
+### [Swift](./Swift/swift.md)
+### [Algorithm](./Algorithm/algo.md)
 ### [데이터베이스](./database/main.md)
 ### [네트워크](./network/main.md)
 ### [운영체제](./os/main.md)
