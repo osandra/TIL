@@ -57,7 +57,8 @@ for i in range(2,n+1):
         print(i,end = ' ')
 ```
 
-[백준-소수 구하기 문제(1929)](../practice_algo/others/소수구하기.md)
+- [백준-소수 구하기 문제(1929)](../practice_algo/others/소수구하기.md)
+- [백준-약수 구하기 문제(2501)](../practice_algo/others/약수구하기.md)
 
 ---
 ### 투 포인터
