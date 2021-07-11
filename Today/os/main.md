@@ -1,3 +1,4 @@
 - [프로세스 & 스레드](process.md)
 - [프로세스 스케줄링](process_sche.md)
 - [동기화](synchronization.md)
+- [데드락](deadlock.md)
