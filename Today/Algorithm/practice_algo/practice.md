@@ -18,6 +18,8 @@
 #### ```Greedy```
 - [백준- 뒤집기](greedy/1.md)
 - [백준- 수들의 합](greedy/2.md)
+- [멀티탭 스케줄링(JAVA)](greedy/1700.md)
+
 
 #### ```DFS/BFS```
 - [백준- 바이러스](DFS_BFS/1.md)
