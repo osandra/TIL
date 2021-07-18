@@ -1,6 +1,4 @@
 ### TIL
-- [도서- 쉽게 배우는 운영체제] 챕터6 교착상태 해결방법, 다중 자원과 교착 상태 검출
-- [도서- 윤성우의 열혈 자료구조] 챕터8 수식 트리 구현
 - UITabBarController 연습 [깃헙링크](https://github.com/osandra/IOS_Practice/commit/902eaeee66898fb39496d236d094bb60ad5ff909)
 
 <div align="center">

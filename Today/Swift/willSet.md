@@ -1,10 +1,7 @@
 ### TIL
 
-- [도서- 쉽게 배우는 운영체제] 챕터5  파일, 파이프, 소켓 프로그래밍
-- Angela Yu Swift ios 강의 학습 269 ~ 278
-    - 같은 스와이프 기능을 두 개의 컨트롤 뷰에서 사용해야 헐 때, 해당 기능을 상위 클래스로 만들고 두 개의 컨트롤 뷰에서 이를 상속받기
+- 같은 스와이프 기능을 두 개의 컨트롤 뷰에서 사용해야 헐 때, 해당 기능을 상위 클래스로 만들고 두 개의 컨트롤 뷰에서 이를 상속받기
 - didSet 과 willSet
-- [stanfordcs193p ios11 강의 1강](https://www.youtube.com/watch?v=71pyOB4TPRE&list=PLPA-ayBrweUzGFmkT_W65z64MoGnKRZMq)
 
 ---
 
@@ -75,11 +72,12 @@ example.testWillSet = false //new Value is false
 - [출처: The Swift Programming Language (Swift 5.3).” Apple Books.](https://books.apple.com/kr/book/the-swift-programming-language-swift-5-3/id881256329?l=en)
 
 <br>
+-----
 
-> stanford ios 강의 1강 practice
-<div align="center">
+### stanford ios 강의 1강 practice
+
 <img src="../../images/20210129/lecture1.gif" height="300"/>
-</div>
+
 
 → 보여줄 버튼들을 담는 배열 선언 <br>
  @IBOutlet var cardBtns: [UIButton]! 

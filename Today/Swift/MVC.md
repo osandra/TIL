@@ -1,6 +1,5 @@
 ## TIL
 
-- Angela Yu Swift ios 강의 학습 100 ~ 123
 - MVC 패턴
 - self is immmutable → 구조체는 값타입이고 클래스는 reference type.
 - 구현한 기능 코드 위에 간단하게 해당 기능이 무엇을 하는 지 작성하기.

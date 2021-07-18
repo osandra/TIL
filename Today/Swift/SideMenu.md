@@ -1,6 +1,4 @@
 ### TIL
-- [도서- 쉽게 배우는 운영체제] 챕터6 교착상태 개요 및 필요조건
-- [도서- 윤성우의 열혈 자료구조] 챕터8 트리의 개요 및 이진 트리 구현
 - SideMenu 라이브러리(CocoaPods)를 사용해서 SideMenu 구현 [깃헙 링크](https://github.com/osandra/IOS_Practice/commit/1af2aabd46bc5a3c8281371dead132b5c3fdb29a)
 
 <div align="center">

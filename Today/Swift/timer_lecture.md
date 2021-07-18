@@ -1,7 +1,5 @@
 ## TIL
 
-- Angela Yu Swift ios 강의 학습 80 ~ 99
-- 네이버 부스트코스 CS50 강의 학습 (~ 배열의 크기 조정)
 ---
 **Udamy Angela Yu Swift 강의 노트**
 

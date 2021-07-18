@@ -1,7 +1,4 @@
 ### **TIL**
-
-- [도서- 쉽게 배우는 운영체제] 챕터7 단일 및 다중 프로그래밍 환경에서의 메모리 할당
-- stanfordcs193p ios11 강의 5강
 - xib 파일 없이 tableViewCell 생성 및 Section을 사용하는 TableView 연습 [깃헙링크](https://github.com/osandra/IOS_Practice/commit/ce437950c0952056dad8943fd60ef4b63a1fb3ab)
 
 <div align="center">

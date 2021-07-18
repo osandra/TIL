@@ -1,9 +1,7 @@
 ### TIL
 
-- Angela Yu Swift ios 강의 학습 151 ~ 158
 - JSON Formatter(크롬 익스텐션) JSON data 보기 편하게 정렬해줌
 - 외부 API를 통해 데이터를 요청하고 해당 데이터를 표시하는 방법 (URLSession)
-- 열혈 C자료구조 스택 ADT, 배열 기반 구현
 
 ---
 ### **외부 API를 통해 데이터를 요청하고 해당 데이터를 표시하는 방법**

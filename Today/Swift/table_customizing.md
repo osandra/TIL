@@ -1,7 +1,4 @@
 ### TIL
-- [도서-  쉽게 배우는 운영체제] 챕터5 프로세스 간 통신, 공유자원과 임계구역, 임계구역 해결 방법
-- Angela Yu Swift ios 강의 학습 261~ 268
-    - Realm 데이터베이스를 사용하여 CRUD 및 쿼리문 사용하는 방법
 - UITableView & TableViewCell Customizing 연습 [깃헙 소스코드](https://github.com/osandra/IOS_Practice/commit/5c1c205060cfd518174a69fb74ecf5c38f67fce4)
     <p align="center">
     <img src= "../../images/20210128/1.png" height="300">

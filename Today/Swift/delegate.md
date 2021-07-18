@@ -1,9 +1,7 @@
 ### TIL
 
-- Angela Yu Swift ios 강의 학습 139 ~ 150
 - darkmode 에 따른 라벨 및 이미지 변경 설정
 - UITextField, delegate 개념
-- 부스트코스 CS50 해시테이블 ~ 스택,큐,딕셔너리 
 
 > UITextField → 키보드를 통해 유저에게 값을 입력 받고, 중요한 작업을 처리할 위임(delegate) 개체를 할당(유저가 입력한 값을 확인, 유저가 리턴 버튼 클릭하면 인지, 유저가 endEditing하면 인지)
 

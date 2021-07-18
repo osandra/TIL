@@ -1,7 +1,4 @@
 ### TIL
-
-- Angela Yu Swift ios 강의 학습 159 ~ 177
-- gps를 통해 유저의 위치 데이터 받기
 - UIPickerView로 선택한 값에 따라 다른 데이터를 요청하고, 응답받은 데이터를  UI에 표시하는 방법
 - 피보나치 리스트 반환 → 스위프트로 구현
 
@@ -31,10 +28,12 @@ class FiboClass {
 let fiboTest = FiboClass()
 fiboTest.fibonacci(n: 10) //[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 ```
-<div align="center">
-<div style="font-size: 19px; margin-bottom: 10px">UIPickerView</div>
+-----
+
+### UIPickerView
+<br>
 <img src= "../../images/0116/1.png" height="100">
-</div>
+
 
 - **UIPickerViewDataSource 프로토콜**을 채택해 피커뷰의 열 개수와 행의 개수를 지정할 수 있다.
 

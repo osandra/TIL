@@ -1,7 +1,5 @@
 ### TIL
 ---
-- 네이버 부스트코스 모두를 위한 컴퓨터 과학(문자열 비교 ~ 메모리 할당과 해제)
-- Angela Yu Swift 강좌 학습
 
 ###  Udamy Angela Yu Swift 강의 노트
 ----

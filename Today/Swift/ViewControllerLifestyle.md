@@ -1,16 +1,16 @@
 ### ViewController Lifestyle
+<div style="width:400px;">
 
 | ![image](../../images/20210119/1.png) |
 |:--:| 
 | [사진 출처](https://medium.com/@vipandey54/uiviewcontroller-lifecycle-7ca2d36f4f07) |
+</div>
 
 1. **ViewDidLoad**
 
     **컨트롤러의 content view가 처음 memory 에 로드 되는 순간 호출된다.** 즉 view controller life cycle에서 한 번 로드되는 것이다. <br> viewController를 push하는 순간 ViewDidLoad 메서드가 호출된다. 다시 호출되기 위해선 해당 뷰컨트롤러가 pop 되어야 한다. 그 전까진 호출되지 않는다. <br>
-    만약 api data가 뷰 컨트롤러의 life cycle 동안 변경될 일이 없다면 여기서 api 데이터를 호출하는 것이 좋다. 그러나 api 데이터를 자주 호출해야한다면 이곳에서 api데이터를 호출하면 안 된다.
-    <p align="center">
+    만약 api data가 뷰 컨트롤러의 life cycle 동안 변경될 일이 없다면 여기서 api 데이터를 호출하는 것이 좋다. 그러나 api 데이터를 자주 호출해야한다면 이곳에서 api데이터를 호출하면 안 된다.<br /><br />
     <img src= "../../images/20210119/2.png" height="300">
-    </p>
 
     viewController1의 **viewDidLoad 메서드는 처음 앱이 실행될 때 단 한번 호출되지만** viewController2의 **viewDidLoad 메서드는** popToView1버튼을 눌러 viewController1의 뷰가 보이고, 해당 뷰에서 다시 pushToView2 버튼을 누르면 호출된다. 즉 pop 을 통해 메모리에서 나간 후, 다시 호출될 때만 viewDidLoad 메서드가 호출되는 것이다.
 

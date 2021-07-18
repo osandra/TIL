@@ -1,10 +1,5 @@
 ### TIL
 
-- [도서-  쉽게 배우는 운영체제]  챕터4 스케줄링 알고리즘, 인터럽트 처리
-- Angela Yu Swift ios 강의 학습 248 ~ 258
-    - Core Data CRUD- Core data를 통해 sqlite에 데이터를 create, read, update, delete 하는 법
-    - Querying with Core Data
-
 ---
 앱의 데이터를 지속성있게 저장하는 방법은 크게 single table(userDefault, Codable(custom객체 저장), keyChain(안전하게 저장)하는 방법과 데이터베이스를 통해 저장하는 방법이 있다. 
 

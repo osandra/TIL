@@ -1,7 +1,5 @@
 ## TIL
 ---
--  Angela Yu Swift ios 강의 학습 65~79(계산기 auto layout 설정, 실로폰 강의)
--  네이버 부스트코스 CS50 강의 학습 (메모리 교환 ~ 파일 읽기)
 
 **Udamy Angela Yu Swift 강의 노트**
 > Auto Layout Example
