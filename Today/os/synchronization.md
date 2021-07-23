@@ -286,7 +286,7 @@ public class ConcurrentTest {
 
         for (int i =0;i<NUMBER_OF_THREADS;i++){ //쓰레드 생성 및 시작
             eatThreads[i] = new Thread(new EatFood(cook));
-            makeTreads[i] = new Thread(new MakeFood(cook));
+            makeTreads[i] = new MakeFood(cook);
             eatThreads[i].start();
             makeTreads[i].start();
         }
@@ -299,8 +299,9 @@ public class ConcurrentTest {
         System.out.println("금일 판매 종료");
     }
 
-    public static class MakeFood implements Runnable { // 음식을 만드는 기능을 호출하는 쓰레드 MakeFood
+    public static class MakeFood extends Thread { // 음식을 만드는 기능을 호출하는 쓰레드 MakeFood
         Cook cook;
+        private boolean stop = false;
 
         public MakeFood(Cook cook) {
             this.cook = cook;
@@ -308,39 +309,35 @@ public class ConcurrentTest {
 
         @Override
         public void run() {
-            while (!Thread.currentThread().isInterrupted()) {
+            while (!stop) {
                 while (ConcurrentTest.remaining > 1) { //판매 가능 수량이 1 미만이면 음식 생성
                     cook.makeFood();
                 }
                 // 모두 판매했으니 쓰레드 종료시키기
-                for (int i =0;i<NUMBER_OF_THREADS;i++){
-                    makeTreads[i].interrupt();
-                    makeTreads[i].interrupt();
-                }
+                this.stop = true;
             }
         }
     }
-    public static class EatFood implements Runnable { // 음식을 먹는 기능을 호출하는 쓰레드 MakeFood
+    public static class EatFood extends Thread { // 음식을 먹는 기능을 호출하는 쓰레드 MakeFood
         Cook cook;
 
         public EatFood(Cook cook) {
             this.cook = cook;
         }
+        private boolean stop = false;
 
         @Override
         public void run() {
-            while (!Thread.currentThread().isInterrupted()) {
+            while (!stop) {
                 while (ConcurrentTest.remaining > 0) {
                     cook.sellFood();
                 }
-                for (int i =0;i<NUMBER_OF_THREADS;i++){
-                    eatThreads[i].interrupt();
-                    makeTreads[i].interrupt();
-                }
+                this.stop = true;
             }
         }
     }
 }
+
 ```
 
 ```java
