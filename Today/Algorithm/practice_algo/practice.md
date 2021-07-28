@@ -19,7 +19,7 @@
 - [백준- 뒤집기](greedy/1.md)
 - [백준- 수들의 합](greedy/2.md)
 - [멀티탭 스케줄링(JAVA)](greedy/1700.md)
-
+- [프로그래머스- 체육복(JAVA)](greedy/3.md)
 
 #### ```DFS/BFS```
 - [백준- DFS와 BFS(JAVA)](DFS_BFS/1260.md)
