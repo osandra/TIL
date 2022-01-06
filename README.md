@@ -10,6 +10,7 @@
 
 ### 웹
 - [JWT](./Today/web/jwt.md)
+- [URI, URL, URN](./Today/web/url.md)
 
 ### 알고리즘
 - [플로이드워셜 알고리즘](./Today/Algorithm/concept/chap9_concept.md)
