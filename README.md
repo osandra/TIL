@@ -20,6 +20,6 @@
 - [알고리즘 문제풀이](./Today/Algorithm/practice_algo/practice.md)
 
 ### 코틀린
-- [코틀린 인 액션](./Today/Kotlin/kotlinInAction.md)
+- [코틀린 인 액션](./Today/Kotlin/kotlinInAction/kotlinInAction.md)
 
 ### [스위프트](./Today/Swift/swift.md)
