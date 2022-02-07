@@ -21,5 +21,6 @@
 
 ### 코틀린
 - [코틀린 인 액션](./Today/Kotlin/kotlinInAction/kotlinInAction.md)
+- [코틀린의 가시성 변경자(public, private, internal, public)와 상속 제어 변경자(open, final, abstract)](./Today/Kotlin/visibility_modifier.md)
 
 ### [스위프트](./Today/Swift/swift.md)

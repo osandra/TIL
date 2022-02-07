@@ -76,7 +76,7 @@ fun main() {
 
 **확장함수는 클래스 내부에서만 사용 가능한 비공개(private) 멤버나 보호된(protected) 멤버를 사용할 수 없으므로, 캡슐화를 지킨다.**
 - **캡슐화**: 객체 지향 프로그래밍의 특징 중 하나다. 비슷한 역할을 하는 속성과 메소드를 하나의 클래스로 모아, 캡슐 내부의 감춰야 할 로직은 감추고 외부에 기능을 제공하는 것을 의미한다.
-- [코틀린의 가시성 변경자(public, private, internal, public)](../visibility_modifier.md)
+- [코틀린의 가시성 변경자(public, private, internal, public)와 상속 제어 변경자(open, final,abstract)](../visibility_modifier.md)
 
 ```kotlin
 // House 라는 객체에는 비공개 멤버인 location과 공개 멤버인 nearSubway,nearBusStop 이 있다.
